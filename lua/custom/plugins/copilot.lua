@@ -1,3 +1,7 @@
+-- return {
+--   'github/copilot.vim',
+-- }
+-- Remove the `use` here if you're using folke/lazy.nvim.
 return {
-  'github/copilot.vim',
+  'Exafunction/codeium.vim',
 }
