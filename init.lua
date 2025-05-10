@@ -177,6 +177,9 @@ vim.opt.confirm = true
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+-- Paste from register/system clipboard while deleting visually selected text
+vim.keymap.set('x', '<leader>p', '"_dP', { noremap = true, silent = true, desc = 'Paste over selection (keep clipboard)' })
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
