@@ -1,5 +1,5 @@
 return {
-  'github/copilot.vim',
+  -- 'github/copilot.vim',
 }
 -- Remove the `use` here if you're using folke/lazy.nvim.
 -- return {
