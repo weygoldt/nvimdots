@@ -120,16 +120,21 @@ vim.opt.showmode = false
 --  See `:help 'clipboard'`
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
-end)
--- EXPERIMENTAL FOR TMUX STUFF:
-local function paste()
-  return {
-    vim.fn.split(vim.fn.getreg '', '\n'),
-    vim.fn.getregtype '',
-  }
-end
 
-vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
+  if vim.env.SSH_TTY then
+    vim.g.clipboard = {
+      name = 'OSC 52',
+      copy = {
+        ['+'] = require('vim.ui.clipboard.osc52').copy '+',
+        ['*'] = require('vim.ui.clipboard.osc52').copy '*',
+      },
+      paste = {
+        ['+'] = require('vim.ui.clipboard.osc52').paste '+',
+        ['*'] = require('vim.ui.clipboard.osc52').paste '*',
+      },
+    }
+  end
+end)
 
 -- Enable break indent
 vim.opt.breakindent = true
