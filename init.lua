@@ -852,6 +852,7 @@ do
       local enabled_filetypes = {
         -- lua = true,
         -- python = true,
+        typst = true,
       }
       if enabled_filetypes[vim.bo[bufnr].filetype] then
         return { timeout_ms = 500 }
@@ -867,9 +868,15 @@ do
       -- rust = { 'rustfmt' },
       -- Conform can also run multiple formatters sequentially
       python = { 'ruff_format' },
+      typst = { 'typstyle' },
       --
       -- You can use 'stop_after_first' to run the first available formatter from the list
       -- javascript = { "prettierd", "prettier", stop_after_first = true },
+    },
+    formatters = {
+      -- Wrap prose to 80 columns. Not --wrap-text=sentence: it splits after
+      -- abbreviations ("_A.~leptorhynchus_" -> "_A." + newline + "~...")
+      typstyle = { prepend_args = { '--wrap-text=fill', '--line-width', '80' } },
     },
   }
 
