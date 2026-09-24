@@ -1,7 +1,2 @@
-return {
-  -- 'github/copilot.vim',
-}
--- Remove the `use` here if you're using folke/lazy.nvim.
--- return {
---   'Exafunction/codeium.vim',
--- }
+-- vim.pack.add { 'https://github.com/github/copilot.vim' }
+-- vim.pack.add { 'https://github.com/Exafunction/codeium.vim' }

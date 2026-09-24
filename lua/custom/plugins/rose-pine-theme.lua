@@ -1,9 +1,4 @@
-return {
-  'weygoldt/rose-pine-neovim',
-  -- 'rose-pine/neovim',
-  name = 'rose-pine',
-  priority = 100,
-  config = function()
-    vim.cmd.colorscheme 'rose-pine'
-  end,
-}
+vim.pack.add { 'https://github.com/weygoldt/rose-pine-neovim' }
+-- vim.pack.add { 'https://github.com/rose-pine/neovim' }
+
+vim.cmd.colorscheme 'rose-pine'

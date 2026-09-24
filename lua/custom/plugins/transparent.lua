@@ -1,4 +1,1 @@
-return {
-  'xiyaowong/transparent.nvim',
-  lazy = false,
-}
+vim.pack.add { 'https://github.com/xiyaowong/transparent.nvim' }
